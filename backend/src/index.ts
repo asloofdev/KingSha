@@ -7,7 +7,6 @@ import mongoose from "mongoose";
 const mongoUri = process.env.MONGO_DB_CONNECTION;
 
 if (!mongoUri) {
-    
     throw new Error('MONGO_DB_CONNECTION environment variable is not defined.');
 }
 
