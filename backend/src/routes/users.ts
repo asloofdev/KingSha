@@ -7,7 +7,7 @@ import User from "../models/user"
 const router = express.Router();
 router.post("/register",async (res:Response,req:Request)=>{
     try {
-        let user = await User.find({
+        let user = await User.findOne({
             email:req.body.email,
         })
 
@@ -17,6 +17,7 @@ router.post("/register",async (res:Response,req:Request)=>{
 
         user = new User(req.body);
         await user.save();
+
     } catch (error) {
         console.log(error)
         res.status(500).json({message:"Something went wrong"})
