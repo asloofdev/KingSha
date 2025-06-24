@@ -2,7 +2,7 @@ import express,{Request,Response} from "express";
 import cors from "cors";
 import "dotenv/config";
 import mongoose from "mongoose";
-
+import userRoutes from "./routes/users"
 
 const mongoUri = process.env.MONGO_DB_CONNECTION;
 
@@ -22,9 +22,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}))
 app.use(cors());
 
-app.get("/test",async(req:Request,res:Response)=>{
-    res.json({message:"hello"})
-})
+app.use("/api/users",userRoutes)
 
 app.listen(7000,()=>{
     console.log('Server is running on local server 7000')})
