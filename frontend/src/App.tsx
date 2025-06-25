@@ -5,6 +5,7 @@ import{
   
 } from "react-router-dom"
 import Layout from "./Layout"
+import Register from "./pages/Register"
 
 function App() {
 
@@ -13,8 +14,13 @@ function App() {
       <Routes>
         <Route path = "/" element={
           <Layout>
-            
+              
           </Layout>
+        }>
+        </Route>
+
+        <Route path="/register" element={
+         <Register/>
         }>
 
         </Route>
