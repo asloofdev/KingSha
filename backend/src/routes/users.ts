@@ -1,15 +1,32 @@
 import express, { Request, Response } from "express";
 import User from "../models/user";
 import jwt from "jsonwebtoken";
+import { check, validationResult } from "express-validator";
+import { ReturnDocument } from "mongodb";
 
 const router = express.Router();
 
-router.post("/register", async (req: Request, res: Response)=> {
-  try {
+router.post("/register",
+  [
+    check("firstName","first Name is required").isString(),
+    check("lastName","last Name is required").isString(),
+    check("email","email is required").isEmail(),
+    check("password"," password with 6 or more character required").isLength({min:6})
+  ]
+  , async (req: Request, res: Response)=> {
+  
+    const erros = validationResult(req);
+    if(!erros.isEmpty()){
+      res.status(400).json({message:erros.array().map(error => error.msg)});
+      return;
+    }
+
+    try {
     let user = await User.findOne({ email: req.body.email });
 
     if (user) {
        res.status(400).json({ message: "User already Created" });
+       return;
     }
     else{
       user = new User(req.body);
@@ -28,12 +45,14 @@ router.post("/register", async (req: Request, res: Response)=> {
             });
          
               res.status(200).json({ message: "User registration successful" });
+              return;
     }
    
   } catch (error) {
     console.error(error);
      res.status(500).json({ message: "Something went wrong" });
+     return;
   }
 });
 
-export default router; // ✅ MUST export the whole router
+export default router; 
