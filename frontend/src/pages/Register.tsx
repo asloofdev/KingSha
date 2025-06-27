@@ -36,6 +36,7 @@ const Register = () => {
                     />
                 </label>
 
+             </div>
                 <label className="text-gray-700 text-sm font-bold flex-1">
                     Email
                     <input 
@@ -85,7 +86,7 @@ const Register = () => {
                         Create Account
                     </button>
                 </span>
-            </div>
+           
         </form>
     );
 };

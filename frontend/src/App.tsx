@@ -14,13 +14,17 @@ function App() {
       <Routes>
         <Route path = "/" element={
           <Layout>
-              
+              <p>
+                Home Page
+              </p>
           </Layout>
         }>
         </Route>
 
         <Route path="/register" element={
-         <Register/>
+         <Layout>
+              <Register/>
+          </Layout>
         }>
 
         </Route>
