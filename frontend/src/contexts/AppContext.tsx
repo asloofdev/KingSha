@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 
 type ToastMessage = {
     message:string;
@@ -14,6 +14,8 @@ type AppContextType = {
 const AppContext = React.createContext<AppContextType | undefined>(undefined)
 
 export const AppContextProvider = ({children}:{children:React.ReactNode})=>{
+    
+   
     return(
         <AppContext.Provider value={
             {showToast:(toslike)=>{
