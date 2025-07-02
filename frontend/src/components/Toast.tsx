@@ -32,3 +32,4 @@ const Toast = ({message,type,onClose}:ToastProps) =>{
     )
 }
 
+export default Toast;
