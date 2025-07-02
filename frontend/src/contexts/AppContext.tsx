@@ -25,7 +25,11 @@ export const AppContextProvider = ({children}:{children:React.ReactNode})=>{
                 
             }}
         }>
-            
+            {toast && (<Toast
+                message={toast.message}
+                type={toast.type}
+                onClose={()=>setToast(undefined)}
+            />)}
             {children}
         </AppContext.Provider> 
     )
