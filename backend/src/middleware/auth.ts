@@ -14,6 +14,7 @@ const verfyToken = (req:Request,res:Response,next:NextFunction) =>{
 
     if(!token){
         res.status(401).json({message:"unathorized"})
+        return
     }
 
     try{
@@ -23,6 +24,7 @@ const verfyToken = (req:Request,res:Response,next:NextFunction) =>{
     }
     catch(error ){
         res.status(401).json({message:'unauthorized'})
+        return
     }
 } 
 
