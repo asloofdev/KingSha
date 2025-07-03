@@ -15,3 +15,7 @@ export const register = async (formData:RegisterFormData)=>{
 
     const resposeBody = await respose.json
 }
+
+export const validateToken = async()=>{
+    const respose = await fetch()
+}

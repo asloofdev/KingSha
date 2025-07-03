@@ -18,7 +18,7 @@ router.post("/login",[
         res.status(400).json({message:errors.array().map(err=>err.msg)});
         return;
     }
-
+                                                                                                                                
     const {email,password} = req.body;
 
     try {
