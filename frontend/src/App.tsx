@@ -6,6 +6,7 @@ import{
 } from "react-router-dom"
 import Layout from "./Layout"
 import Register from "./pages/Register"
+import LogIn from "./pages/LogIn"
 
 function App() {
 
@@ -26,8 +27,17 @@ function App() {
               <Register/>
           </Layout>
         }>
+        </Route>
+
+        <Route path="/log-in" element={
+          <Layout>
+            <LogIn/>
+          </Layout>
+        }>
 
         </Route>
+
+       
       </Routes>
     </Router>
   )

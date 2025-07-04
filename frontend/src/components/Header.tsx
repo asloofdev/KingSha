@@ -18,10 +18,18 @@ const Header = () =>{
                             <Link to = "/my-hotels">My Hotels</Link>
                             <button>Sign Out</button>
                         </>
-                    ):(<Link to="/register"
+                    ):(
+                    <>
+                        <Link to="/register"
                     className="flex bg-white items-center text-blue-500 px-3 font-bold hover:bg-gray-100">
                     Sign In
-                    </Link>)
+                    </Link>
+                    
+                    <Link to="/log-in" className="flex bg-white items-center text-blue-500 font-bold px-3 hover:bg-gray-100">
+                        Log In
+                    </Link>
+                    </>
+                    )
                     
                     }
                     
