@@ -1,6 +1,8 @@
 import React, { useContext, useState } from "react";
 import Toast from "../components/Toast";
 import { useQuery } from "@tanstack/react-query";
+import * as apiClient from "../api-client"
+ 
 
 type ToastMessage = {
     message:string;
@@ -21,9 +23,10 @@ export const AppContextProvider = ({children}:{children:React.ReactNode})=>{
 
     const [toast,setToast] = useState<ToastMessage|undefined>(undefined)
 
-    const {isError} = useQuery("validateToken",apiClient.validateToken,{
-        retry:false,
-    })
+    const { isError } = useQuery({queryKey: ["validateToken"],queryFn: apiClient.validateToken,
+    retry: false,
+    });
+
 
     return(
         <AppContext.Provider value={

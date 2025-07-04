@@ -10,11 +10,12 @@ declare global{
 }
 
 const verfyToken = (req:Request,res:Response,next:NextFunction) =>{
-    const token = req.cookies["auth_token"];
+    const token = req.cookies.auth_token;
 
     if(!token){
         res.status(401).json({message:"unathorized"})
         return
+        
     }
 
     try{
@@ -23,8 +24,9 @@ const verfyToken = (req:Request,res:Response,next:NextFunction) =>{
         next()
     }
     catch(error ){
-        res.status(401).json({message:'unauthorized'})
-        return
+         res.status(401).json({message:'unauthorized'})
+         return
+        
     }
 } 
 
