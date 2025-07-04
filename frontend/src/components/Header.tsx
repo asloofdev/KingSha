@@ -21,7 +21,9 @@ const Header = () =>{
                     ):(<Link to="/register"
                     className="flex bg-white items-center text-blue-500 px-3 font-bold hover:bg-gray-100">
                     Sign In
-                    </Link>)}
+                    </Link>)
+                    
+                    }
                     
                 </span>
             </div>
