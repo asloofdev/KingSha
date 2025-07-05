@@ -52,3 +52,14 @@ export const login = async (formData:LogInFormData)=>{
 
     return body;
 }
+
+export const logout = async()=>{
+    const response = await fetch (`${API_BASE_URL}/api/auth/logout`,{
+        credentials:"include",
+        method:"POST",
+    })
+
+    if(!response.ok){
+        throw new Error("Error during Log out")
+    }
+}
