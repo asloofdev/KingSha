@@ -58,4 +58,10 @@ router.get("/validate-token",verfyToken,(req:Request,res:Response)=>{
     res.status(200).send({userId:req.userId})
 })
 
+router.post("/logout",async(req:Request,res:Response)=>{
+    res.cookie("auth_token","",{
+        expires:new Date(0),
+    })
+})
+
 export default router
