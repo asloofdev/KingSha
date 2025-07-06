@@ -1,4 +1,4 @@
-import { useMutation, useQueries, useQueryClient } from "@tanstack/react-query";
+import { useMutation,  useQueryClient } from "@tanstack/react-query";
 import {useForm} from "react-hook-form"
 import * as apiClient from "../api-client"
 import { useAppContext } from "../contexts/AppContext";
