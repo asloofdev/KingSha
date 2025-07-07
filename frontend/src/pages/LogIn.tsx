@@ -3,6 +3,7 @@ import {useForm} from "react-hook-form"
 import * as apiClient from "../api-client"
 import { useAppContext } from "../contexts/AppContext";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export type LogInFormData ={
     email:string;
@@ -56,7 +57,9 @@ const LogIn = ()=>{
                 <span className="text-red-500">{errors.password.message}</span>
                )}
             </label>
-             <span>
+
+             <span className="flex items-center justify-between">
+                <span className="text-sm">Not Register <Link className="underline" to="/register"> Create an account here</Link></span>
                     <button 
                         type="submit" 
                         className="bg-blue-500 text-white p-2 font-bold hover:bg-blue-400 text-xl"
