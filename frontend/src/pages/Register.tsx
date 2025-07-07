@@ -118,7 +118,7 @@ const Register = () => {
                 
                 <span className="flex items-center justify-between">
                     <span className="text-sm">
-                        Already register <Link className="underline" to="/log-in">Click here to login</Link>
+                        Already register <Link className="underline" to="/log-in">Click here to Log-In</Link>
                     </span>
                     <button 
                         type="submit" 
