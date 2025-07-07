@@ -2,7 +2,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query"
 import * as apiClient from "../api-client"
 import { useAppContext } from "../contexts/AppContext"
 
-const SignOutButton = () =>{
+const LogOutButton = () =>{
 
     const queryClient = useQueryClient()
     const {showToast} = useAppContext();
@@ -30,4 +30,4 @@ const SignOutButton = () =>{
     )
 }
 
-export default SignOutButton
+export default LogOutButton
