@@ -2,7 +2,8 @@ import {  useMutation, useQueryClient } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
 import * as apiClient from "../api-client"
 import { useAppContext } from "../contexts/AppContext";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
+
 export type RegisterFormData = {
     firstName: string;
     lastName: string;
@@ -115,7 +116,10 @@ const Register = () => {
                     )}
                 </label>
                 
-                <span>
+                <span className="flex items-center justify-between">
+                    <span className="text-sm">
+                        Already register <Link className="underline" to="/log-in">Click here to login</Link>
+                    </span>
                     <button 
                         type="submit" 
                         className="bg-blue-500 text-white p-2 font-bold hover:bg-blue-400 text-xl"
