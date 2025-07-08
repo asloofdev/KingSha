@@ -13,7 +13,7 @@ const LogIn = ()=>{
     
     const {register,handleSubmit,formState:{errors}} = useForm<LogInFormData>();
 
-    const queryClient = useQueryClient()
+    const queryClient = useQueryClient();
 
     const {showToast} = useAppContext();
     const navigate = useNavigate();
