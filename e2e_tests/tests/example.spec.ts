@@ -1,10 +1,12 @@
 import { test, expect } from '@playwright/test';
 
-test('has title', async ({ page }) => {
+const UI_URL = "http://localhost:5173/"
+
+test('should not allow the user to sign in ', async ({ page }) => {
   await page.goto('https://playwright.dev/');
 
 
-  
+
 });
 
 test('get started link', async ({ page }) => {
