@@ -5,7 +5,7 @@ const UI_URL = "http://localhost:5173/"
 test('should not allow the user to sign in ', async ({ page }) => {
   await page.goto(UI_URL);
 
-
+  await page.getByRole("link",{name:"Sign In"}).click()
 
 });
 
