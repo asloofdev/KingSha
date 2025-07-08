@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 const UI_URL = "http://localhost:5173/"
 
 test('should not allow the user to sign in ', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
+  await page.goto(UI_URL);
 
 
 
