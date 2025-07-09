@@ -17,6 +17,10 @@ test('should not allow the user to sign in ', async ({ page }) => {
 
 });
 
+test('should allow the user to register ',async ({page})=>{
+  await page.goto(UI_URL)
+})
+
 test('get started link', async ({ page }) => {
   await page.goto('https://playwright.dev/');
 
