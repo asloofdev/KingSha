@@ -10,6 +10,10 @@ test('should not allow the user to sign in ', async ({ page }) => {
   await expect(page.getByRole("heading",{name:"Sign In"})).toBeVisible()
   
   await page.locator("[name=email]").fill("test1@check.com")
+  awwait page.locatot("[name=password]"),fill("test@1243")
+
+
+  await page.getByRole("button",{name:"login"}).click()
 
 });
 
