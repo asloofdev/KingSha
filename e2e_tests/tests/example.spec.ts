@@ -22,6 +22,14 @@ test('should allow the user to register ',async ({page})=>{
   await page.goto(UI_URL)
   await page.getByRole("link",{name:"Sign In"}).click()
   await expect(page.getByRole("heading",{name:"Create Account"})).toBeVisible()
+
+  await page.locator("[name=First Name]").fill("test")
+  await page.locator("[name=Last Name]").fill("fill")
+  await page.locator("[name=Email]").fill("test@fill.com")
+  await page.locator("[name=Password]").fill("test@1")
+  await page.locator("[name=Confirm Password]").fill("test@1")
+
+  await expect(page.getByText("Registration Successfull")).toBeVisible()
 })
 
 test('get started link', async ({ page }) => {
