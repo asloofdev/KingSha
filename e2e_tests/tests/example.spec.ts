@@ -20,6 +20,8 @@ test('should not allow the user to log in ', async ({ page }) => {
 
 test('should allow the user to register ',async ({page})=>{
   await page.goto(UI_URL)
+  await page.getByRole("link",{name:"Sign In"}).click()
+  await expect(page.getByRole("heading",{name:"Create Account"})).toBeVisible()
 })
 
 test('get started link', async ({ page }) => {
