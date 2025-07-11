@@ -23,11 +23,13 @@ test('should allow the user to register ',async ({page})=>{
   await page.getByRole("link",{name:"Sign In"}).click()
   await expect(page.getByRole("heading",{name:"Create Account"})).toBeVisible()
 
-  await page.locator("[name=First Name]").fill("test")
-  await page.locator("[name=Last Name]").fill("fill")
-  await page.locator("[name=Email]").fill("test@fill.com")
-  await page.locator("[name=Password]").fill("test@1")
-  await page.locator("[name=Confirm Password]").fill("test@1")
+  await page.locator("[name=firstName]").fill("test")
+  await page.locator("[name=lastName]").fill("fill")
+  await page.locator("[name=email]").fill("test@fill.com")
+  await page.locator("[name=password]").fill("test@1")
+  await page.locator("[name=confirmPassword]").fill("test@1")
+
+  await page.getByRole("button",{name:"Create Account"}).click()
 
   await expect(page.getByText("Registration Successfull")).toBeVisible()
 })
