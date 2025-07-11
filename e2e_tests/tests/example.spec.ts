@@ -5,15 +5,15 @@ const UI_URL = "http://localhost:5173/"
 test('should not allow the user to sign in ', async ({ page }) => {
   await page.goto(UI_URL);
 
-  await page.getByRole("link",{name:"Sign In"}).click()
+  await page.getByRole("link",{name:"Log In"}).click()
 
-  await expect(page.getByRole("heading",{name:"Sign In"})).toBeVisible()
+  await expect(page.getByRole("heading",{name:"Log In"})).toBeVisible()
   
-  await page.locator("[name=email]").fill("fashan@test.com")
-  await page.locator("[name=password]").fill("test@1")
+  await page.locator("[name=email]").fill("fashan@test1.com")
+  await page.locator("[name=password]").fill("test@1")  
 
 
-  await page.getByRole("button",{name:"login"}).click()
+  await page.getByRole("button",{name:"Log In"}).click()
 
 });
 
