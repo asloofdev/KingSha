@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 const UI_URL = "http://localhost:5173/"
 
-test('should not allow the user to sign in ', async ({ page }) => {
+test('should not allow the user to log in ', async ({ page }) => {
   await page.goto(UI_URL);
 
   await page.getByRole("link",{name:"Log In"}).click()
@@ -14,6 +14,7 @@ test('should not allow the user to sign in ', async ({ page }) => {
 
 
   await page.getByRole("button",{name:"Log In"}).click()
+  await expect(page.getByText("Invalid Credential")).toBeVisible()
 
 });
 
