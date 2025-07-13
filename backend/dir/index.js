@@ -10,6 +10,7 @@ const mongoose_1 = __importDefault(require("mongoose"));
 const users_1 = __importDefault(require("./routes/users"));
 const auth_1 = __importDefault(require("./routes/auth"));
 const cookie_parser_1 = __importDefault(require("cookie-parser"));
+const path_1 = __importDefault(require("path"));
 const mongoUri = process.env.MONGO_DB_CONNECTION;
 if (!mongoUri) {
     throw new Error('MONGO_DB_CONNECTION environment variable is not defined.');
@@ -25,6 +26,7 @@ app.use((0, cors_1.default)({
     origin: process.env.FRONTEND_URI,
     credentials: true
 }));
+app.use(express_1.default.static(path_1.default.join(__dirname, "../../frontend/dist")));
 app.use("/api/users", users_1.default);
 app.use("/api/auth", auth_1.default);
 app.listen(7000, () => {
