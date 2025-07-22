@@ -6,6 +6,7 @@ import userRoutes from "./routes/users"
 import authRoutes from "./routes/auth"
 import cookieParser from "cookie-parser"
 import path from "path"
+import {v2 as cloundinary} from "cloudinary"
 
 const mongoUri = process.env.MONGO_DB_CONNECTION;
 
