@@ -4,3 +4,24 @@ import multer from "multer"
 const router = express.Router()
 
 const storage = multer.memoryStorage()
+const upload = multer({
+    storage:storage,
+    limits:{
+        fileSize:5*1024*1024//5mb
+        
+    }
+})
+
+router.post("/",upload.array('image',6),async(req:Request,res:Response) =>{
+    try {
+        const imageFiles = req.files as Express.Multer.File[];
+        const newHotel = req.body
+
+        const uploadPromise = imageFiles.map(async(image)=>{
+            const b64 = Buffer.from(image.buffer).toString("base64")
+
+        })
+    } catch (error) {
+        
+    }
+})
