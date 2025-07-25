@@ -28,6 +28,7 @@ router.post("/",upload.array('image',6),async(req:Request,res:Response) =>{
 
         const imageUrls = await Promise.all(uploadPromises)
     } catch (error) {
-        
+        console.log("Error creating hotel:",error)
+        res.status(500).json(message:"Something went wrong")
     }
 })
