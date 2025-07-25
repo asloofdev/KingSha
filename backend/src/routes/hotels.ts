@@ -19,6 +19,8 @@ router.post("/",upload.array('image',6),async(req:Request,res:Response) =>{
 
         const uploadPromise = imageFiles.map(async(image)=>{
             const b64 = Buffer.from(image.buffer).toString("base64")
+            let dataURI = "data:"+image.mimetype+"base64"+b64;
+            
 
         })
     } catch (error) {
