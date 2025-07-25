@@ -25,6 +25,8 @@ router.post("/",upload.array('image',6),async(req:Request,res:Response) =>{
             return res.url;
 
         })
+
+        const imageUrls = await Promise.all(uploadPromises)
     } catch (error) {
         
     }
