@@ -32,3 +32,6 @@ const hotelSchema = new mongoose.Schema<HotelType>({
     imageUrls:[{type:String, required:true}],
     lastUpdate:{type:Date, required:true},
 })
+
+const Hotel = mongoose.model<HotelType>("Hotel",hotelSchema);
+export default Hotel;
