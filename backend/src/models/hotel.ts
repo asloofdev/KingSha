@@ -1,3 +1,5 @@
+import mongoose from "mongoose";
+
 export type HotelType = {
     _id:string;
     userId:string;
@@ -9,7 +11,9 @@ export type HotelType = {
     adultCount:number;
     childCount:number;
     facilities:string[];
-    pricePerNight:number;
-
-
+    pricePerNight:number
 }
+
+const hotelSchema = new mongoose.Schema<HotelType>({
+    
+})
