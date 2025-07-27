@@ -24,6 +24,7 @@ router.post("/",verfyToken,[
     body("description").notEmpty().withMessage("Description is Required"),
     body("type").notEmpty().withMessage("Hotel type is Required"),
     body("pricePerNight").notEmpty().isNumeric().withMessage("Price per night is Required and it must be a number"),
+    body("facilities").notEmpty().isArray().withMessage("Facilitiy is Required"),
     
 
 ],upload.array('image',6),async(req:Request,res:Response) =>{
