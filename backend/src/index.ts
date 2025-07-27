@@ -7,6 +7,7 @@ import authRoutes from "./routes/auth"
 import cookieParser from "cookie-parser"
 import path from "path"
 import {v2 as cloundinary} from "cloudinary"
+import myHotelRoutes from "./routes/hotels"
 
 const mongoUri = process.env.MONGO_DB_CONNECTION;
 
@@ -33,6 +34,7 @@ app.use(express.static(path.join(__dirname,"../../frontend/dist")))
 
 app.use("/api/users",userRoutes)
 app.use("/api/auth",authRoutes)
+app.use("/api/hotels",myHotelRoutes)
 
 app.listen(7000,()=>{
     console.log('Server is running on local server 7000')})
