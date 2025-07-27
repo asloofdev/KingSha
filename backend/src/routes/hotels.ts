@@ -54,3 +54,5 @@ router.post("/",verfyToken,[
         res.status(500).json({message:"Something went wrong"})
     }
 })
+
+export default router;
