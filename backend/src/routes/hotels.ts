@@ -3,6 +3,8 @@ import multer from "multer"
 import cloudinary from "cloudinary"
 import Hotel, { HotelType } from "../models/hotel"
 import verfyToken from "../middleware/auth"
+import { body } from "express-validator"
+
 
 const router = express.Router()
 
@@ -15,7 +17,17 @@ const upload = multer({
     }
 })
 
-router.post("/",upload.array('image',6),async(req:Request,res:Response) =>{
+router.post("/",verfyToken,[
+    body("name").notEmpty().withMessage("Name is Required"),
+    body("city").notEmpty().withMessage("City is Required"),
+    body("name").notEmpty().withMessage("name is Required"),
+    body("name").notEmpty().withMessage("name is Required"),
+    body("name").notEmpty().withMessage("name is Required"),
+    body("name").notEmpty().withMessage("name is Required"),
+    body("name").notEmpty().withMessage("name is Required"),
+    body("name").notEmpty().withMessage("name is Required"),
+
+],upload.array('image',6),async(req:Request,res:Response) =>{
     try {
         const imageFiles = req.files as Express.Multer.File[];
         const newHotel:HotelType = req.body
