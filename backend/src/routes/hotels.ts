@@ -20,12 +20,11 @@ const upload = multer({
 router.post("/",verfyToken,[
     body("name").notEmpty().withMessage("Name is Required"),
     body("city").notEmpty().withMessage("City is Required"),
-    body("name").notEmpty().withMessage("name is Required"),
-    body("name").notEmpty().withMessage("name is Required"),
-    body("name").notEmpty().withMessage("name is Required"),
-    body("name").notEmpty().withMessage("name is Required"),
-    body("name").notEmpty().withMessage("name is Required"),
-    body("name").notEmpty().withMessage("name is Required"),
+    body("country").notEmpty().withMessage("Country is Required"),
+    body("description").notEmpty().withMessage("Description is Required"),
+    body("type").notEmpty().withMessage("Hotel type is Required"),
+    body("pricePerNight").notEmpty().isNumeric().withMessage("Price per night is Required and it must be a number"),
+    
 
 ],upload.array('image',6),async(req:Request,res:Response) =>{
     try {
