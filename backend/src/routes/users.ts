@@ -9,9 +9,9 @@ const router = express.Router();
 router.post("/register",
   [
     check("firstName","First Name is required").isString(),
-    check("lastName","Fast Name is required").isString(),
-    check("email","email is required").isEmail(),
-    check("password"," password with 6 or more character required").isLength({min:6})
+    check("lastName","Last Name is required").isString(),
+    check("email","Email is required").isEmail(),
+    check("password"," Password with 6 or more character required").isLength({min:6})
   ]
   , async (req: Request, res: Response)=> {
   
